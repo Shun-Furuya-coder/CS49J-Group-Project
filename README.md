@@ -3,9 +3,10 @@
 Link: https://github.com/Shun-Furuya-coder/CS49J-Group-Project
 
 Class:
-  Abstract Class -> Book 
+  Abstract Class represents as Book 
   
   Concrete Class: 
+    
     FictionBook 
     
     NonFictionBook
@@ -14,7 +15,10 @@ Class:
     
     TextBook
     
-  Interface Class -> Borrower
+  Interface Class represents as Borrower
+    
+   Concrete Class: 
+   
     Student 
     
     Teacher
