@@ -1,8 +1,11 @@
 # CS49J-Group-Project
 
-Link: https://github.com/Shun-Furuya-coder/CS49J-Group-Project
+## Link to the Github Project: https://github.com/Shun-Furuya-coder/CS49J-Group-Project
 
-Class:
+## Presentation Slides: https://tinyurl.com/bdfu5y5d
+
+## Class Statements:
+
   Abstract Class represents as Book 
   
   Concrete Class: 
