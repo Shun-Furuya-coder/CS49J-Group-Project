@@ -14,7 +14,7 @@ public class queueBook {
 
         // User input
         System.out.println("Category to Choose: FictionBook, NonFictionBook, ReferenceBook, TextBook");
-        System.out.println("Enter the Category of the Book to Store: ");
+        System.out.print("Enter the Category of the Book to Store: ");
         String input;
 
         while (scan.hasNextLine() && (input = scan.nextLine()).length() != 0) {
