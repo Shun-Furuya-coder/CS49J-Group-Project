@@ -1,5 +1,6 @@
-import java.util.*;
-
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
 /*
  * Able to represent Queue with storing the list of 
  * FictionBook, NonFictionBook, ReferenceBook, TextBook.
@@ -9,7 +10,7 @@ public class queueBook {
         
         // Scanner method 
         Scanner scan = new Scanner(System.in);
-        Queue<String> category = new LinkedList<Integer>();
+        Queue<String> queue = new LinkedList<>();
 
         // User input
         System.out.println("Category to Choose: FictionBook, NonFictionBook, ReferenceBook, TextBook");
@@ -17,9 +18,9 @@ public class queueBook {
         String input;
 
         while (scan.hasNextLine() && (input = scan.nextLine()).length() != 0) {
-            category.add(input);
+            queue.add(input);
         }
 
-        System.out.printf("Category Queue: %s%n", category);
+        System.out.printf("Category Queue: %s%n", queue);
     }
 }
