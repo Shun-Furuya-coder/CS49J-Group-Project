@@ -1,5 +1,7 @@
 package LibraryManagementSystem;
 
+import java.util.HashMap;
+
 //Concrete class 4
 public class Visitor implements Borrower {
 
