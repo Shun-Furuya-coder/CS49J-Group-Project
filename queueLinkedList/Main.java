@@ -1,4 +1,4 @@
-package queueLinkedList;
+package LibraryManagementSystem;
 
 /*
     Class: Main.java
