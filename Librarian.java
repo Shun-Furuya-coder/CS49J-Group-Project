@@ -1,5 +1,7 @@
 package LibraryManagementSystem;
 
+import java.util.HashMap;
+
 //Concrete class 3
 public class Librarian implements Borrower {
 
