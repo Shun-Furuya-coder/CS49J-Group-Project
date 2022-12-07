@@ -1,5 +1,11 @@
 package LibraryManagementSystem;
 
+/**
+* Borrows book object
+*
+*
+**/
+
 public interface Borrower {
 
 	   public void borrowBook(Book book);
