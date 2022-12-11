@@ -3,6 +3,9 @@ package LibraryManagementSystem;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class LibraryManagementSystem {
     private JFrame frame;
@@ -15,28 +18,28 @@ public class LibraryManagementSystem {
     private JMenuItem saveFileItem;
     private JMenuItem exitItem;
     private JMenuItem helpItem;
-    
+
     public LibraryManagementSystem() {
         createGUI();
     }
-    
+
     private void createGUI() {
         // Create Frame
         frame = new JFrame("Library Management System");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 400);
         frame.setLocationRelativeTo(null);
-        
+
         // Create Menu Bar
         menuBar = new JMenuBar();
         frame.setJMenuBar(menuBar);
-        
+
         // Create Menus
         fileMenu = new JMenu("File");
         helpMenu = new JMenu("Help");
         menuBar.add(fileMenu);
         menuBar.add(helpMenu);
-        
+
         // Create Menu Items
         openFileItem = new JMenuItem("Open File");
         saveFileItem = new JMenuItem("Save File");
@@ -47,77 +50,89 @@ public class LibraryManagementSystem {
         fileMenu.addSeparator();
         fileMenu.add(exitItem);
         helpMenu.add(helpItem);
-        
+
         // Add Action Listeners
         openFileItem.addActionListener(new OpenFileListener());
         saveFileItem.addActionListener(new SaveFileListener());
         exitItem.addActionListener(new ExitListener());
         helpItem.addActionListener(new HelpListener());
-        
+
         // Create Main Panel
         mainPanel = new JPanel();
         frame.add(mainPanel);
-        
+
         // Create Title Label
         titleLabel = new JLabel("Library Management System");
 
         // Add Components to Main Panel
         mainPanel.add(titleLabel);
-        
+
         // Show Frame
         frame.setVisible(true);
     }
-    
+
     // Open File Listener
     class OpenFileListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Code for opening a file
         }
     }
-    
+
     // Save File Listener
     class SaveFileListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Code for saving a file
         }
     }
-    
+
     // Exit Listener
     class ExitListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
     }
-    
+
     // Help Listener
     class HelpListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Code for displaying help
         }
     }
-    
+
     // Function for Reading and Writing to Files
     public static void readWriteToFile(String fileName) {
         // Code for reading and writing to a file
     }
-    
+
     // Function for Recursion
     public static void recursion(String input) {
         // Code for recursion
     }
-    
+
     // Function for Exception Handling
-    public static void exceptionHandler() {
+    public static void readfile() {
         try {
             // Code that may throw an exception
+            Scanner read = new Scanner(new File("BookData.txt"));
+            String title, author, genre, numOfCopies;
+            read.useDelimiter(";");
+
+            while(read.hasNext()){
+                title = read.next();
+                author = read.next();
+                numOfCopies = read.next();
+                genre = read.next();
+                System.out.println(title + " " + author + " " + numOfCopies + " " + genre);
+            }
+            read.close();
         } catch (Exception e) {
-            // Code for handling the exception
+            System.out.println("Error: " + e.getMessage());
         }
     }
-    
+
     // Function for Switch Statements
     public static void switchStatement(int input) {
-        switch(input) {
+        switch (input) {
             case 1:
                 // Code for case 1
                 break;
@@ -129,17 +144,20 @@ public class LibraryManagementSystem {
                 break;
         }
     }
-    
+
     public static void main(String[] args) {
         // Create the Library Management System
         LibraryManagementSystem lms = new LibraryManagementSystem();
+        readfile();
     }
 
 
-// Partner's Piece of Code
-public static String processInput(String input) {
-    // Code for processing the user input and returning the appropriate response
+    // Partner's Piece of Code
+    public static String processInput(String input) {
+        // Code for processing the user input and returning the appropriate response
 
+        return input;
+    }
 }
 
 
