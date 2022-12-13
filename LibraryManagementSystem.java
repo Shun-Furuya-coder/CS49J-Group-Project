@@ -117,17 +117,34 @@ public class LibraryManagementSystem {
     class HelpListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Code for displaying help
+            
         }
     }
 
     // Function for Reading and Writing to Files
     public static void readWriteToFile(String fileName) {
         // Code for reading and writing to a file
-    }
-
+        String filename = "BookData.txt";
+        
+        // Writing the Content on the File (should follow the variable written here)
+        try (FileWriter fileWriter = new FileWriter(absolutePath)) {
+            String content = bookTitle + ";" + authorLastName + "," 
+                                      + authorLastName + ";" + numOfCopies
+                                      + ";" + genre;
+            fileWriter.write(content);
+            fileWriter.close();
+          // catch any of the Exception Handling
+        } catch (IOException e) {
+        }
+        
     // Function for Recursion
     public static void recursion(String input) {
         // Code for recursion
+        if (input == 1) {
+            return 1;
+        }
+        return input * recursion(input - 1);
+            
     }
 
     // Function for Exception Handling
@@ -143,14 +160,15 @@ public class LibraryManagementSystem {
                 author = read.next();
                 numOfCopies = read.next();
                 genre = read.next();
-                System.out.println(title + " " + author + " " + numOfCopies + " " + genre);
+                System.out.println(bookTitle + " " + authorLastName + " " + 
+                                   authorFirstName + numOfCopies + " " + genre);
             }
             read.close();
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
-
+        
     // Function for Switch Statements
     public static void switchStatement(int input) {
         switch (input) {
