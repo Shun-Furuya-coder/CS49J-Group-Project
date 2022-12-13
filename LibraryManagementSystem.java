@@ -72,9 +72,19 @@ public class LibraryManagementSystem {
     }
 
     // Open File Listener
-    class OpenFileListener implements ActionListener {
+    class OpenFileListener extends Component implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Code for opening a file
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+
+            int openFile = fileChooser.showOpenDialog(this);
+
+            if(openFile == JFileChooser.APPROVE_OPTION)
+            {
+                File select = fileChooser.getSelectedFile();
+                System.out.print("Selected file: " + select.getAbsolutePath());
+            }
         }
     }
 
@@ -82,6 +92,17 @@ public class LibraryManagementSystem {
     class SaveFileListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             // Code for saving a file
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Specify a file to save.");
+
+            int selection = fileChooser.showSaveDialog(frame);
+            if(selection != JFileChooser.CANCEL_OPTION)
+            {
+                File saveFile = fileChooser.getSelectedFile();
+                System.out.println("Save file as: " + saveFile.getAbsolutePath());
+            }
+        }
+    }
         }
     }
 
@@ -158,7 +179,6 @@ public class LibraryManagementSystem {
 
         return input;
     }
-}
-
+  }
 
 
